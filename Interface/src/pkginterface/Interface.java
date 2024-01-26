@@ -31,7 +31,7 @@ class Smartphone extends Phone implements ICamara,IMusicPlayer{
     @Override
     public void startmusic(){
         System.out.println("music started");
-    }
+    }                                           
     @Override
     public void stopmusic(){
         System.out.println("music stopped");
