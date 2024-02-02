@@ -9,6 +9,7 @@ abstract class my{
 class Outer{
     public void display(){
         my m=new my(){
+            @Override
             public void display(){
                 System.out.println("hello");
             }    
