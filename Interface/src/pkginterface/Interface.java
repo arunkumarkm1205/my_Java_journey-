@@ -10,6 +10,7 @@ class Phone{
 
 }
 
+
 interface ICamara{
     void clickphoto();
     void recordvideo();
