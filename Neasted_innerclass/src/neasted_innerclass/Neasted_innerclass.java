@@ -10,6 +10,7 @@ class Outer{
         int y=18;
         public void Innerdisplay(){
             System.out.println(x);
+    
             System.out.println(y);
         }
     }
