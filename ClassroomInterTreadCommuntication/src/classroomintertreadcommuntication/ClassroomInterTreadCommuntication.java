@@ -13,9 +13,14 @@ class WhiteBoard
     int nos=0;
     int count=0;
     String text;
+    public void Attendence()
+    {
+        nos++;
+    }
     
     synchronized public void write(String s)
     {
+        System.out.println("teachers is writting"+s);
         while(count!=0)
             try{wait();}catch(InterruptedException E){}
         text=s;
@@ -24,37 +29,32 @@ class WhiteBoard
     }
     synchronized public String read()
     {
-        String line;
+        
         while(count==0)
             try{wait();}catch(InterruptedException E){}
+        String line=text;
         count--;
-        line=text;
         if(count==0)
              notify();
         return line;
     }
-    public void Attendence()
-    {
-        nos++;
-    }
+    
 }
 class Teacher extends Thread
 {
     WhiteBoard b;
     String line;
-    
-    public Teacher(String l,WhiteBoard k)
+    String notes[]={"java is lang","its OOPS","its Supports multitrading","END"};
+    public Teacher(WhiteBoard k)
     {
-        line=l;
         b=k;
     }
     @Override
     public void run()
     {
-        while(true)
+        for(int i=0;i<notes.length;i++)
         {
-        b.write(line);
-        System.out.println(line + "is wriiten");
+           b.write(notes[i]);
         }
     }
 }
@@ -72,11 +72,14 @@ class Student extends Thread
     @Override
     public void run()
     {
+        String text;
         b.Attendence();
-        while(true)
+        do
         {
-        System.out.println(name+" "+b.read());
-        }
+        text=b.read();
+        System.out.println(name+" Reading "+text);
+        System.out.flush();
+        }while(!text.equals("END"));
     }
 }
 public class ClassroomInterTreadCommuntication {
@@ -86,18 +89,12 @@ public class ClassroomInterTreadCommuntication {
      */
     public static void main(String[] args) {
      WhiteBoard b=new WhiteBoard();
-     Teacher t1=new Teacher("java is a language",b);
-     Teacher t2=new Teacher("it is OOPS",b);
-     Teacher t3=new Teacher("java Supports MulltiThreading",b);
-     Teacher t4=new Teacher("END",b);
+     Teacher t1=new Teacher(b);
      Student s1=new Student("arun",b);
      Student s2=new Student("karun",b);
      Student s3=new Student("tharun",b);
      Student s4=new Student("varun",b);
      t1.start();
-     t2.start();
-     t3.start();
-     t4.start();
      s1.start();
      s2.start();
      s3.start();
