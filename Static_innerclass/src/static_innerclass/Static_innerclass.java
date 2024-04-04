@@ -2,7 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
+/**
+ * @author ArunKumar K M
+ * @version 2.0 
+ * @since 2024
+ **/
 package static_innerclass;
+/**
+ * class outer
+ * @value x=10
+ * @author arunk
+ */
 
 class Outer{
     int x=10;
