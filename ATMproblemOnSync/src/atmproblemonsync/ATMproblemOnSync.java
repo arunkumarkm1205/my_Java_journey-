@@ -13,7 +13,7 @@ package atmproblemonsync;
  * @author arunk
  */
 
-class ATM 
+ class ATM 
 {
     /**
      * Synchronized method to check the balance and prints the balance
@@ -86,6 +86,7 @@ public class ATMproblemOnSync {
      */
     public static void main(String[] args) throws Exception
     {
+        
         ATM h=new ATM();
         User u1=new User(h,"arun",2000);
         User u2=new User(h,"karun",5000);
