@@ -50,10 +50,10 @@ public class AbstractClass {
         Shape r1,c1;
         r1= new Rectangle(10,20);
         c1=new Circle(7);
-        System.out.println("Area of the circle"+c1.area());
-        System.out.println("Area of rectangle"+r1.area());
-        System.out.println("perimeter of circle"+c1.perimeter());
-        System.out.println("perimeter of rectangle"+r1.perimeter());
+        System.out.println("Area of the circle "+c1.area());
+        System.out.println("Area of rectangle "+r1.area());
+        System.out.println("perimeter of circle "+c1.perimeter());
+        System.out.println("perimeter of rectangle "+r1.perimeter());
         
     }
     

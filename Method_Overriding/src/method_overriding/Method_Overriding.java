@@ -1,5 +1,4 @@
-/*
-
+/**/
 package method_overriding;
 class Car
 {
